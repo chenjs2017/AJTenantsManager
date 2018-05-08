@@ -1,0 +1,36 @@
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+<h1>Tenant Lists</h1>
+<div style="margin: 5px" class="alert alert-danger" ng-show="err">
+    {{err}}
+</div>
+
+<div ng-show="lst">
+  <div><strong> Find {{lst.length}} Records </strong> </div>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>DefaultDomainName</td>
+      <td>Manage Users</td>
+	  <td>Manage Licenses</td>
+    <tr ng-repeat="line in lst">
+      <td> {{line.Name}}</td>
+      <td> {{line.DefaultDomainName}}</td>
+      <td> <a href='index.html#!/users/{{line.TenantId}}'>Manage Users</a></td>
+      <td> <a href='index.html#!/licenses/{{line.TenantId}}'>Manage Licenses</a></td>
+    </tr>
+  </table>
+</div>
+

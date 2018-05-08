@@ -1,0 +1,23 @@
+<h1>Licenses</h1>
+<div style="margin: 5px" class="alert alert-danger" ng-show="err">
+    {{err}}
+</div>
+<div ng-show="lst">
+
+  <table>
+    <tr>
+      <td>AccountSkuId</td>
+      <td>ActiveUnits</td>
+      <td>ConsumedUnits</td>
+
+    </tr>    
+    <tr ng-repeat="line in lst">
+      <td> {{line.AccountSkuId}}</td>
+      <td> {{line.ActiveUnits}}</td>
+      <td> {{line.ConsumedUnits}} </td>
+
+    </tr>
+  </table>
+ 
+</div>
+
