@@ -10,7 +10,7 @@ myApp.config(function ($routeProvider) {
 });
 //provider
 (function() {
-    var urlBase = "https://40.114.125.137:8080/"
+    var urlBase = "http://40.114.125.137:8080/"
     myApp.service("myProvider", function ($http) {
 	this.getJsonCallback = (function (localUrl, callback, logResult){
 	    var url = urlBase + localUrl;
