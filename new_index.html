@@ -1,0 +1,33 @@
+
+<html >
+  <head>
+    <style>
+      table, th , td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+      }
+      table tr:nth-child(odd) {
+      background-color: #f1f1f1;
+      }
+      table tr:nth-child(even) {
+      background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body >
+    <div><a href='/'> Home </a></div>
+    <div ng-app="myApp" >
+      <div id="content" ng-view></div>    
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+      <script type="text/javascript" src="new_app.js"></script>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
