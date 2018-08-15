@@ -32,5 +32,21 @@ table tr:nth-child(even) {
       <td> <a href='new_index.html#!/licenses/{{line.TenantId}}'>Manage Licenses</a></td>
     </tr>
   </table>
+  <div ng-repeat="line in arr"> {{$index + 1}}
+  <table>
+    <tr>
+      <td>AccountSkuId</td>
+      <td>ActiveUnits</td>
+      <td>ConsumedUnits</td>
+
+    </tr>    
+    <tr ng-repeat="l in line">
+      <td> {{l.AccountSkuId}}</td>
+      <td> {{l.ActiveUnits}}</td>
+      <td> {{l.ConsumedUnits}} </td>
+
+    </tr>
+  </table>
+  </div>
 </div>
 

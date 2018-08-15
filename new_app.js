@@ -124,7 +124,25 @@ myApp.config(function ($routeProvider) {
 //tenants
 (function() {
     myApp.controller("tenantsController", function ($scope, $location, $routeParams, myProvider){
-	myProvider.getJson('tenants',$scope);
+	myProvider.getJsonCallback('tenants', function(err,data){
+		$scope.lst = data;
+		$scope.arr = [];
+		//console.log ($scope.lst);
+		for (var i = 0; i < data.length; i ++)
+		{
+			var index = i;
+			myProvider.getJsonCallback('skus?id=' + data[i].TenantId,function(e,d){
+				if (d){
+					$scope.arr.push (d);
+				}
+				
+				//console.log ($scope.lst);
+				//console.log (index);
+				//console.log ($scope.lst[i]);
+				//$scope.lst[i].sku = d;
+			});
+		}
+	});
     });
 })();
 
